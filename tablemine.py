@@ -9,7 +9,7 @@ from multiprocessing import Pool
 def propertyScan(parcel_major):
 
     scancnt = 0
-    csv_file = 'NonPlatIDs_' + str("{0:02}".format(parcel_major)) + '.csv'
+    csv_file = 'Plat_ID' + str("{0:02}".format(parcel_major)) + '.csv'
     df_in = pd.read_csv(csv_file)
 
     df = pd.DataFrame(columns=['Property_ID',
@@ -38,7 +38,7 @@ def propertyScan(parcel_major):
             scancnt = 0
             driver.close()
             driver = webdriver.Chrome(service=srvc, options=chrome_options)
-            
+
         url = 'https://gis.co.carver.mn.us/publicparcel/?pin=' + \
             str("{0:09}".format(parcelid))
         driver.get(url)
