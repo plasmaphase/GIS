@@ -31,7 +31,7 @@ def propertyScan(parcel_major):
     chrome_options.add_argument('--headless')
     driver = webdriver.Chrome(service=srvc, options=chrome_options)
 
-    for parcelid in df_in['NonPlat_ID']:
+    for parcelid in df_in['Plat_ID']:
         if(scancnt < 100):
             scancnt = scancnt + 1
         else:
